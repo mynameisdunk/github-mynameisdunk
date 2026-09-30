@@ -29,6 +29,7 @@
       --text: #e8e6e3;      /* main text colour */
       --muted: #9a9894;     /* secondary text */
       --accent: #96d5da;    /* highlight colour (links, tags) */
+      --border: #1e5852;
     }
 
     * { box-sizing: border-box; }
@@ -53,6 +54,9 @@
       background: var(--panel);
       padding: 24px;
       border-radius: 24px;
+      border-width: 4px;
+      border-colour: var(--border);
+      border-style: solid;
       
     }
     header h1 { margin: 0 0 8px; font-size: 2.4rem; letter-spacing: -0.02em; }
