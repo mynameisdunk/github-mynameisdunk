@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--
+  HTML comments look like this. Think of them as /* ... */ in C++.
+
+  STRUCTURE OF THIS FILE (like the layout of a .cpp file):
+    <head>  = the "includes and declarations": page title, styling. Not displayed.
+    <body>  = the actual content shown on screen.
+
+  Every <tag> needs a matching </tag> to close it, just like { and }.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- This text appears in the browser tab. CHANGE ME -->
+  <title>Your Name — Audio Software</title>
+
+  <!--
+    <style> is CSS: it controls how things look.
+    Each rule reads as:   selector { property: value; }
+    You can mostly leave this alone. The colours are defined once at the top
+    (like constexpr constants) so you can restyle the whole site by editing them.
+  -->
+  <style>
+    :root {
+      --bg: #111315;        /* page background */
+      --panel: #1b1e21;     /* background of each demo card */
+      --text: #e8e6e3;      /* main text colour */
+      --muted: #9a9894;     /* secondary text */
+      --accent: #f2a541;    /* highlight colour (links, tags) */
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Keeps content in a centred column rather than stretching across wide screens */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
+
+    header { margin-bottom: 48px; }
+    header h1 { margin: 0 0 8px; font-size: 2.4rem; letter-spacing: -0.02em; }
+    header p  { margin: 0; color: var(--muted); font-size: 1.1rem; }
+
+    /* Each demo is an <article class="demo"> */
+    .demo {
+      background: var(--panel);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 40px;
+    }
+    .demo h2 { margin: 0 0 4px; }
+    .demo .tag {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    /* Makes videos scale to the width of the card, keeping a 16:9 shape */
+    .video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin: 16px 0;
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .video iframe, .video video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    a { color: var(--accent); }
+
+    footer { color: var(--muted); font-size: 0.9rem; text-align: center; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- ===== PAGE HEADER: change the name and tagline ===== -->
+    <header>
+      <h1>Your Name</h1>
+      <p>Audio plugins and tools, written in C++.</p>
+    </header>
+
+
+    <!-- ===== DEMO 1: a YouTube video =====
+         To add another demo, copy everything from <article> to </article>
+         and paste it below. -->
+    <article class="demo">
+      <h2>Plugin Name One</h2>
+      <span class="tag">Reverb · VST3 / AU</span>
+
+      <!-- Replace YOUTUBE_ID_HERE with the ID from YouTube's Share → Embed link.
+           e.g. for https://www.youtube.com/embed/abc123XYZ the ID is abc123XYZ -->
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/YOUTUBE_ID_HERE"
+          title="Plugin Name One demo"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+        A short description of what this plugin does and what the video shows.
+        <!-- <p> is a paragraph. Line breaks in your source are ignored;
+             start a new <p> for a new paragraph. -->
+      </p>
+    </article>
+
+
+    <!-- ===== DEMO 2: a video file stored in your repo =====
+         Upload the file into a folder called "videos" in your repository,
+         then put its path in src below. Keep files small (well under 100 MB). -->
+    <article class="demo">
+      <h2>Plugin Name Two</h2>
+      <span class="tag">Synth · Standalone</span>
+
+      <div class="video">
+        <video controls preload="metadata">
+          <source src="videos/demo2.mp4" type="video/mp4">
+          Your browser can't play this video.
+        </video>
+      </div>
+
+      <p>
+        Another description. You can add a link like this:
+        <a href="https://github.com/yourusername/your-repo">source code on GitHub</a>.
+      </p>
+    </article>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>Contact: <a href="mailto:you@example.com">you@example.com</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
