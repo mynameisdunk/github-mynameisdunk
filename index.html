@@ -153,10 +153,12 @@
       <span class="tag">Packet Loss Emulation</span>
 
       <div class="video">
-        <video controls preload="metadata">
-          <source src="videos/demo2.mp4" type="video/mp4">
-          Your browser can't play this video.
-        </video>
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/YOUTUBE_ID_HERE"
+          title="Plugin Name One demo"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
 
       <p>
@@ -164,6 +166,35 @@
         It works by calculating the RSSI [relative signal strength index] and then intially the state is defined as pass or fail. 
         However if the RSSI falls into the sweet spot (as I like to think of it) of around -70dB to -85dB the signal is then entered into the packet loss emulation function. 
         This uses the Gilbert Elliot model to decide if each frame is good or bad. If the frame is bad then it is passed through the concealment function. 
+      </p>
+    </article>
+
+     </article>
+
+
+    <!-- ===== DEMO 2: a video file stored in your repo =====
+         Upload the file into a folder called "videos" in your repository,
+         then put its path in src below. Keep files small (well under 100 MB). -->
+    <article class="demo">
+      <h2>Concealment</h2>
+      <span class="tag">On / Off</span>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/YOUTUBE_ID_HERE"
+          title="Plugin Name One demo"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+       When concealment is turned off and a frame received is determined to be bad the last good frame is repeated. 
+       If the number of bad frames exceeds the limit each incoming frames state is flipped to fail until a good frame is received. 
+       When conealment is on the plugin uses a pitch detection buffer to determine the pitch period of the last good ~10ms of audio. 
+       Then this pitch period of audio is repeated which returns a slightly better concealed repeated sound. 
+       Again if the number of bad frames exceeds the limit the incoming frames state is filpped to fail. 
+       This concealment method is what gives the interesting and glitchy sounds heard when you forget your phone in your bedroom to go downstairs to do the washing up. 
       </p>
     </article>
 
