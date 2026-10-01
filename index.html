@@ -120,8 +120,8 @@
          To add another demo, copy everything from <article> to </article>
          and paste it below. -->
     <article class="demo">
-      <h2>Bad Bluetooth</h2>
-      <span class="tag">BitPool Demo </span>
+      <h2>Bitpool Demo</h2>
+      <span class="tag"> </span>
 
       <!-- Replace YOUTUBE_ID_HERE with the ID from YouTube's Share → Embed link.
            e.g. for https://www.youtube.com/embed/abc123XYZ the ID is abc123XYZ -->
@@ -149,8 +149,8 @@
          Upload the file into a folder called "videos" in your repository,
          then put its path in src below. Keep files small (well under 100 MB). -->
     <article class="demo">
-      <h2>Plugin Name Two</h2>
-      <span class="tag">Synth · Standalone</span>
+      <h2>Distance and Material</h2>
+      <span class="tag">Packet Loss Emulation</span>
 
       <div class="video">
         <video controls preload="metadata">
@@ -160,8 +160,10 @@
       </div>
 
       <p>
-        Another description. You can add a link like this:
-        <a href="https://github.com/yourusername/your-repo">source code on GitHub</a>.
+        By using the logic found in the Gilbert Elliot model combined with path loss modelling these two parameters allow you to emulate the sound of the transmitter being moved too far from the receiver. 
+        It works by calculating the RSSI [relative signal strength index] and then intially the state is defined as pass or fail. 
+        However if the RSSI falls into the sweet spot (as I like to think of it) of around -70dB to -85dB the signal is then entered into the packet loss emulation function. 
+        This uses the Gilbert Elliot model to decide if each frame is good or bad. If the frame is bad then it is passed through the concealment function. 
       </p>
     </article>
 
